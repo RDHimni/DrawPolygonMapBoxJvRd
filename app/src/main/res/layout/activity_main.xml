@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/map"
+        app:layout_constraintVertical_bias="1">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fill Polygon"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Polygon Color"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:thumbTint="#FF0000"
+            android:progressTint="#FF0000"
+            android:layout_marginTop="5dp"
+            android:id="@+id/seek_red"
+            />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:thumbTint="#00FF00"
+            android:progressTint="#00FF00"
+            android:layout_marginTop="5dp"
+            android:id="@+id/seek_green"
+            />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:thumbTint="#0000FF"
+            android:progressTint="#0000FF"
+            android:layout_marginTop="5dp"
+            android:id="@+id/seek_blue"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            >
+
+            <Button
+                android:id="@+id/bt_draw"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="draw polygon"
+                android:layout_marginEnd="5dp"
+                />
+
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="clear"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
